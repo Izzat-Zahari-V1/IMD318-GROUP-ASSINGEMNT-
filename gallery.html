@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* General reset for all elements */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Body styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #BFECFF; /* Soft sky blue */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Navigation bar styles */
+    nav {
+      background-color: #008CBA; /* Sky Blue */
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    nav ul li a:hover {
+      color: #FFD700; /* Gold color on hover */
+    }
+
+    /* Header and page title */
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    /* Intro paragraph styles */
+    p.intro-text {
+      text-align: justify;
+      line-height: 1.5;
+      margin-bottom: 40px;
+      font-size: 1.1em;
+    }
+
+    /* Row container for the gallery */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+
+    /* Column layout for images */
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+
+    /* Image styling inside each column */
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover effect - zoom in images */
+    .column img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Captions for the images */
+    figcaption {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1em;
+      color: #333;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Facility</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Review</a></li>
+      <li><a href="#">Alumni</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <h2>Gallery of Tiny Tots</h2>
+
+  <!-- Introductory paragraph -->
+  <p class="intro-text">
+    Welcome to our Gallery! Here, we celebrate the vibrant and creative spirit of our kindergarten through a collection of photos that capture the daily joys and learning experiences of our young learners. From colorful art projects and exciting classroom activities to outdoor adventures and group interactions, our gallery showcases the moments that make each day special. Our dedicated teachers foster an environment where curiosity and imagination thrive, and these images reflect the warmth and enthusiasm that define our community.
+    <br><br>
+    Explore the heart of our kindergarten through these images, which highlight the engaging and dynamic experiences we offer. Whether it's discovering new things, collaborating with friends, or simply having fun, every photo tells a story of growth, friendship, and discovery. We invite you to take a closer look and get a glimpse into the nurturing and inspiring environment where your child will learn, play, and grow.
+  </p>
+
+  <!-- Photo Grid Section -->
+  <div class="row"> 
+    <div class="column">
+      <figure>
+        <img src="imagesgallery/kids_kindergarten1.jpg" alt="The 4 years old student of Tiny Tots Having Lunch">
+        <figcaption>A 4-year-old child enjoying lunch with friends.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kidsactivity1.jpg" alt="Closeup Drawing and Stencils of the student">
+        <figcaption>Art project: A close-up of a child using stencils and crayons to create art.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids1.jpg" alt="Kids of Tiny Tots taking a selfie">
+        <figcaption>Happy moments: Tiny Tots kids taking a fun selfie together.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten2.jpg" alt="Paris Image 1">
+        <figcaption>Outdoor fun: Kindergarten students enjoying their outdoor playtime.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kidsactivity2.jpg" alt="Nature Image 1">
+        <figcaption>Exploring nature: Children learn about nature during an outdoor class.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids2.jpg" alt="Mist Image 1">
+        <figcaption>Building teamwork: Kids working together on a group activity.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten3.jpg" alt="Paris Image 2">
+        <figcaption>Creative expression: Children engaged in a creative arts session.</figcaption>
+      </figure>
+    </div>
+    <div class="column">
+      <figure>
+        <img src="imagesgallery//kidsactivity3.jpg" alt="Underwater Image 1">
+        <figcaption>Diving into imagination: A fun underwater-themed classroom activity.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids3.jpg" alt="Ocean Image 1">
+        <figcaption>Learning through play: Kids enjoying a pretend play session about the ocean.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten4.jpg" alt="Wedding Image 2">
+        <figcaption>Celebrating a special event: Tiny Tots dressed up for a mini celebration.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kidsactivity4.jpg" alt="Mountain Skies Image 1">
+        <figcaption>Outdoor adventures: Children exploring the wonders of nature.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids4.jpg" alt="Rocks Image 2">
+        <figcaption>Nature’s wonders: Kids investigating rocks and textures outdoors.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten5.jpg" alt="Underwater Image 2">
+        <figcaption>Underwater adventure: A playful classroom activity focused on sea creatures.</figcaption>
+      </figure>
+    </div>  
+    <div class="column">
+      <figure>
+        <img src="imagesgallery//kidsactivity5.jpg" alt="Wedding Image 3">
+        <figcaption>A mini wedding celebration: Kids playing dress-up for a pretend wedding.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids5.jpg" alt="Rocks Image 3">
+        <figcaption>Exploring textures: Children learning about different rock types.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten6.jpg" alt="Waterfalls Image 2">
+        <figcaption>Fun in nature: Tiny Tots enjoying the outdoors near a waterfall.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids6.jpg" alt="Paris Image 3">
+        <figcaption>Building creativity: Kids working together to build structures with blocks.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kidsactivity6.jpg" alt="Nature Image 2">
+        <figcaption>Nature exploration: Children collecting leaves and exploring the natural world.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten7.jpg" alt="Mist Image 2">
+        <figcaption>Story time: Children engaged in an exciting story session with their teacher.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids7.jpg" alt="Paris Image 4">
+        <figcaption>Learning through art: Kids displaying their colorful artwork.</figcaption>
+      </figure>
+    </div>
+    <div class="column">
+      <figure>
+        <img src="imagesgallery//kidsactivity7.jpg" alt="Underwater Image 3">
+        <figcaption>Underwater adventure: Children playing with ocean-themed toys.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten8.jpg" alt="Ocean Image 2">
+        <figcaption>Learning about sea life: Kids discovering sea creatures in their classroom.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids8.jpg" alt="Wedding Image 4">
+        <figcaption>Teamwork: Kids working together on a group art project.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kidsactivity8.jpg" alt="Mountain Skies Image 2">
+        <figcaption>Adventurous spirit: Tiny Tots exploring the outdoors with curiosity.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//kids_kindergarten9.jpg" alt="Rocks Image 3">
+        <figcaption>Discovering nature: Children examining different rocks during an outdoor lesson.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagesgallery//activitywithkids9.jpg" alt="Underwater Image 4">
+        <figcaption>Fun and learning: Kids enjoying an underwater-themed activity.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+</body>
+</html>
