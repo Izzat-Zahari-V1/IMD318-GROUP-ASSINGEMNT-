@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the amazing facilities at Tadika Al Ikhwan, including play areas, classrooms, libraries, and more!">
+  <title>Facilities | Tint Tots Kindergarden</title>
+  <style>
+    /* General styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    /* Navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: sandybrown;
+      color: white;
+    }
+
+    /* Image grid container */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 500px); /* Increased height of rows */
+      gap: 15px;
+      padding: 20px;
+    }
+
+    /* Facility card styling */
+    .facility {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .facility img {
+      width: 100%;
+      height: 100%; /* Ensures images fill the new taller row height */
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .facility:hover img {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .facility:hover .overlay {
+      opacity: 1;
+    }
+
+    /* hover respionds */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto; 
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+
+    .large-text {
+  font-size: 30px;
+  text-align: center; /* Keeps the alignment consistent */
+  }
+
+  </style>
+</head>
+<body>
+  <h1>Tint Tots Kindergarden</h1>
+  <p class="large-text">Welcome Tint Tots Kindergarden, where learning and fun come together!</p>
+
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+
+  <body style="text-align: center;">
+    <h1><b> Our Finest Facilities Keeping the Children Happy and Energetic!</b></h1>
+    <p class="large-text">Our facilities are state-of-the-art in learning and engaging children's needs, as well as approved by the Ministry of Education.</p>
+  </body>
+
+  <div class="container">
+    <div class="facility">
+      <img src="Image Facilities/Indoor Play.jpg" alt="Play Area">
+      <div class="overlay">
+        <h3>Play Area</h3>
+        <p>Outdoor space with swings and slides for fun physical activities.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/classroom.jpg" alt="Classroom">
+      <div class="overlay">
+        <h3>Classroom</h3>
+        <p>Bright, colorful rooms for interactive learning and creativity.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/art room.jpg" alt="Art Room">
+      <div class="overlay">
+        <h3>Art Room</h3>
+        <p>Room for drawing, painting, and hands-on art projects.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/Music Room.jpg" alt="Music Room">
+      <div class="overlay">
+        <h3>Music Room</h3>
+        <p>Exploring sounds, rhythm, and learning instruments.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/Library kids.jpg" alt="Library">
+      <div class="overlay">
+        <h3>Library</h3>
+        <p>A collection of colorful books to spark young imaginations.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/kids playgorund outside.jpg" alt="Outdoor Playground">
+      <div class="overlay">
+        <h3>Outdoor Playground</h3>
+        <p>Safe play area with climbing structures and open spaces.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/Rest area.jpg" alt="Rest Area">
+      <div class="overlay">
+        <h3>Rest Area</h3>
+        <p>Quiet space for children to relax and recharge.</p>
+      </div>
+    </div>
+    <div class="facility">
+      <img src="Image Facilities/gardening.jpg" alt="Garden">
+      <div class="overlay">
+        <h3>Garden</h3>
+        <p>Beautiful outdoor garden for exploration and learning about nature.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
