@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #BFECFF; /* Soft sky blue */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Navigation bar */
+    nav {
+      background-color: #008CBA; /* Sky blue */
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px; /* Increased the gap between navigation items */
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    nav ul li a:hover {
+      color: #FFD700; /* Hover effect */
+    }
+
+    /* Heading style */
+    .heading {
+      font-size: 30px;
+      margin-top: 30px; /* Adjusted margin top to give space from navigation bar */
+      margin-bottom: 30px; /* Added margin bottom to ensure gap between title and review form */
+      text-align: center;
+      color: #333;
+    }
+
+    /* Paragraph adjustments */
+    p {
+      text-align: justify;  /* Justify the text */
+      line-height: 1.5;      /* Set line height to 1.5 */
+      margin-bottom: 40px;   /* Add margin to prevent overlap with review form and feedback section */
+    }
+
+    /* Flex container for review form and feedback overview */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px; /* Space between the review form and feedback section */
+      flex-wrap: wrap;
+    }
+
+    /* Review Form */
+    .review-form {
+      background-color: #FFF9BF; /* Soft yellow */
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Larger shadow */
+      position: relative;
+      width: 48%; /* Adjust width to allow space for feedbacks */
+      max-height: 500px; /* Set a fixed max-height for the review box */
+      overflow-y: auto; /* Make the review box scrollable if content exceeds max height */
+      z-index: 10;
+      animation: flyIn 1s ease-out; /* Floating animation */
+    }
+
+    /* Animation for floating effect */
+    @keyframes flyIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .review-form h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .review-form input, .review-form textarea, .review-form button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .review-form button {
+      background-color: #008CBA; /* Sky blue color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .review-form button:hover {
+      background-color: #005f6b;
+    }
+
+    /* Star rating system */
+    #stars {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .fa {
+      font-size: 30px;
+      color: #ccc; /* Default color for unselected stars */
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .checked {
+      color: #FFD700; /* Golden color for checked stars */
+      transform: scale(1.2); /* Make the star larger when checked */
+    }
+
+    /* Floating and extended feedback section positioned at right */
+    .feedbacks {
+      background-color: #FFF9BF;
+      height: auto; /* Set height to auto */
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 5;
+      animation: floatUp 1s ease-out; /* Animation to pop up */
+      width: 48%; /* Adjust width to fit alongside review form */
+    }
+
+    /* Floating animation for feedback overview */
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .feedbacks h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .feedback {
+      background-color: white;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback .user-rating {
+      display: flex;
+      align-items: center;
+    }
+
+    .feedback .user-rating .fa {
+      color: #ffcc00;
+      margin-right: 5px;
+    }
+
+    .feedback .review-text {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .feedback .feedback-buttons {
+      margin-top: 10px;
+    }
+
+    .feedback .feedback-buttons button {
+      margin-right: 10px;
+      padding: 5px 10px;
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .feedback .feedback-buttons button:hover {
+      background-color: #005f6b;
+    }
+
+    .reply-form {
+      display: none;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    .reply-btn {
+      background-color: #ffcc00;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .reply-btn:hover {
+      background-color: #ff9900;
+    }
+
+    /* For mobile responsiveness */
+    @media (max-width: 600px) {
+      .review-form,
+      .feedbacks {
+        width: 100%; /* Stack the form and feedbacks vertically on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Facility</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Alumni</a></li>
+      <li><a href="#">Review</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Heading -->
+  <div class="heading">Tiny Tots Rating & Review</div>
+  
+  <!-- Justified paragraph -->
+  <p>We appreciate your opinions and would be interested in knowing about our kindergarten experience. Kindly review and rate our services, leaving any comments or recommendations you may have. 
+    Your suggestions enable us to make improvements and provide the greatest experience for every kid entrusted to our care. We value your time and invite you to share any information that could benefit other parents who 
+    are thinking about enrolling their children in our kindergarten. We appreciate your vital role in our community.</p>
+
+  <!-- Container for review form and feedbacks -->
+  <div class="container">
+    <!-- Review Form -->
+    <div class="review-form" id="reviewForm">
+      <h3>Leave a Review</h3>
+      <form>
+        <label for="rating">Your Rating (1 to 5):</label><br>
+        <div id="stars">
+          <span class="fa fa-star" data-value="1"></span>
+          <span class="fa fa-star" data-value="2"></span>
+          <span class="fa fa-star" data-value="3"></span>
+          <span class="fa fa-star" data-value="4"></span>
+          <span class="fa fa-star" data-value="5"></span>
+        </div><br><br>
+
+        <label for="reviewText">Your Review:</label><br>
+        <textarea id="reviewText" name="reviewText" rows="4" required></textarea><br><br>
+
+        <label for="imageUpload">Upload Image (optional):</label><br>
+        <input type="file" id="imageUpload" name="imageUpload"><br><br>
+
+        <button type="submit" id="submitReview">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Floating Feedback Section positioned at the right of the review form -->
+    <div class="feedbacks" id="feedbacks">
+      <h3>Feedback Overview</h3>
+      <!-- Example feedbacks will appear here dynamically -->
+    </div>
+  </div>
+
+  <script>
+    // Star click event
+    const stars = document.querySelectorAll('#stars .fa');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.getAttribute('data-value'));
+        updateStars();
+      });
+    });
+
+    function updateStars() {
+      stars.forEach(star => {
+        const starValue = parseInt(star.getAttribute('data-value'));
+        if (starValue <= selectedRating) {
+          star.classList.add('checked');
+        } else {
+          star.classList.remove('checked');
+        }
+      });
+    }
+
+    // Handle review form submission
+    document.getElementById('reviewForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const reviewText = document.getElementById('reviewText').value;
+      const imageUpload = document.getElementById('imageUpload').files[0];
+
+      if (selectedRating > 0 && reviewText.trim() !== '') {
+        // Add the review to the feedback section
+        addFeedback(selectedRating, reviewText, imageUpload);
+        // Clear the form fields
+        selectedRating = 0;
+        document.getElementById('reviewText').value = '';
+        updateStars();
+      }
+    });
+
+    function addFeedback(rating, reviewText, imageUpload) {
+      const feedbackDiv = document.createElement('div');
+      feedbackDiv.classList.add('feedback');
+
+      // Creating the rating stars
+      const ratingDiv = document.createElement('div');
+      ratingDiv.classList.add('user-rating');
+
+      for (let i = 0; i < rating; i++) {
+        const star = document.createElement('span');
+        star.classList.add('fa', 'fa-star', 'checked');
+        ratingDiv.appendChild(star);
+      }
+
+      for (let i = rating; i < 5; i++) {
+        const star = document.createElement('span');
+        star.classList.add('fa', 'fa-star');
+        ratingDiv.appendChild(star);
+      }
+
+      // Creating the review text
+      const reviewTextDiv = document.createElement('div');
+      reviewTextDiv.classList.add('review-text');
+      reviewTextDiv.textContent = reviewText;
+
+      // Handle image upload
+      if (imageUpload) {
+        const image = document.createElement('img');
+        image.src = URL.createObjectURL(imageUpload);
+        image.style.maxWidth = '100%';
+        feedbackDiv.appendChild(image);
+      }
+
+      // Create the agree/disagree buttons (emoji)
+      const feedbackButtonsDiv = document.createElement('div');
+      feedbackButtonsDiv.classList.add('feedback-buttons');
+
+      const agreeButton = document.createElement('button');
+      agreeButton.innerHTML = '👍'; // Good emoji
+      agreeButton.addEventListener('click', function () {
+        alert('You agreed with this review!');
+      });
+
+      const disagreeButton = document.createElement('button');
+      disagreeButton.innerHTML = '👎'; // Bad emoji
+      disagreeButton.addEventListener('click', function () {
+        alert('You disagreed with this review!');
+      });
+
+      // Create the reply button and form
+      const replyButton = document.createElement('button');
+      replyButton.classList.add('reply-btn');
+      replyButton.innerHTML = 'Reply';
+      replyButton.addEventListener('click', function () {
+        const replyForm = feedbackDiv.querySelector('.reply-form');
+        replyForm.style.display = (replyForm.style.display === 'none' || replyForm.style.display === '') ? 'block' : 'none';
+      });
+
+      const replyForm = document.createElement('div');
+      replyForm.classList.add('reply-form');
+      const replyTextarea = document.createElement('textarea');
+      replyTextarea.rows = 3;
+      replyTextarea.placeholder = 'Type your reply here...';
+      replyForm.appendChild(replyTextarea);
+
+      const submitReplyButton = document.createElement('button');
+      submitReplyButton.textContent = 'Submit Reply';
+      submitReplyButton.addEventListener('click', function() {
+        const replyText = replyTextarea.value.trim();
+        if (replyText !== '') {
+          const replyDiv = document.createElement('div');
+          replyDiv.classList.add('review-text');
+          replyDiv.textContent = "Reply: " + replyText;
+          feedbackDiv.appendChild(replyDiv);
+          replyTextarea.value = '';
+          replyForm.style.display = 'none';
+        }
+      });
+
+      replyForm.appendChild(submitReplyButton);
+      feedbackButtonsDiv.appendChild(agreeButton);
+      feedbackButtonsDiv.appendChild(disagreeButton);
+      feedbackButtonsDiv.appendChild(replyButton);
+      feedbackDiv.appendChild(ratingDiv);
+      feedbackDiv.appendChild(reviewTextDiv);
+      feedbackDiv.appendChild(feedbackButtonsDiv);
+      feedbackDiv.appendChild(replyForm);
+
+      document.getElementById('feedbacks').appendChild(feedbackDiv);
+    }
+  </script>
+
+</body>
+</html>
