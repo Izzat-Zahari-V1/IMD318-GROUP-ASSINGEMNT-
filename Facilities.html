@@ -7,7 +7,7 @@
   <title>Facilities | Tint Tots Kindergarden</title>
   <style>
     /* General styling */
-     body {
+    body {
       margin: 0;
       font-family: 'Mirza';
       background-color: skyblue;
@@ -21,35 +21,66 @@
       text-align: center;
     }
 
-    /* Navigation bar */
-    nav {
-      background-color: #008CBA; /* Sky Blue */
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav ul {
-      list-style-type: none;
+        /* Right-Aligned Navigation Bar */
+        .topnav {
       display: flex;
-      justify-content: center;
-      gap: 30px;
+      justify-content: flex-end;
+      background-color: #73b8c4;
+      padding: 0;
     }
 
-    nav ul li {
-      margin: 0;
-    }
-
-    nav ul li a {
+    .topnav a {
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
       text-decoration: none;
-      color: white;
-      font-size: 18px;
-      text-transform: uppercase;
+      font-size: 30px;
     }
 
-    nav ul li a:hover {
-      color: #FFD700; /* Gold color on hover */
+    .topnav a:hover {
+      background-color: #9be1e7;
+      color: #000000;
+    }
+
+    .topnav a.active {
+      background-color: #73b8c4;
+      color: white;
+    }
+
+    /* Dropdown Menu in Navigation Bar */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      text-align: center;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #d8edf2;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .topnav a,
+    .dropdown .dropbtn {
+      display: inline-block;
     }
 
     /* Image grid container */
@@ -124,18 +155,24 @@
 </head>
 
   <!-- Navigation bar -->
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Service</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Facility</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Review</a></li>
-      <li><a href="#">Alumni</a></li>
-    </ul>
-  </nav>
+  <body>
+    <!-- Right-Aligned Navigation Bar -->
+    <div class="topnav">
+      <a class="active" href="welcomepage.html">Home</a>
+      <a href="#about">About Us</a>
+      <div class="dropdown">
+        <a href="#service" class="dropbtn">Services</a>
+        <div class="dropdown-content">
+          <a href="#daycare">Daycare</a>
+          <a href="#event">Event/Program</a>
+        </div>
+      </div>
+      <a href="#contact">Contact Us</a>
+      <a href="#facility">Facility</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#alumni">Alumni</a>
+    </div>
+  </body>
 
   <body style="text-align: center;">
     <h1><b> Our Finest Facilities Keeping the Children Happy and Energetic!</b></h1>
