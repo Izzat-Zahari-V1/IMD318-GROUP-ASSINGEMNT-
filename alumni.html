@@ -1,0 +1,492 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Mirza' rel='stylesheet'>
+        <title>Tiny Tots Academy |  Alumni </title>
+
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family:'Poppins', sans-serif;
+            }
+
+             /* Right-Aligned Navigation Bar */
+             .topnav {
+                display: flex;
+                justify-content: flex-end;
+                background-color: #73b8c4;
+                padding: 0;
+            }
+            
+            .topnav a {
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px
+            }
+            
+            .topnav a:hover {
+                background-color: #9be1e7;
+                color: #000000;
+            }
+            
+            .topnav a.active {
+                background-color: #73b8c4;
+                color: white;
+            }
+            
+            /* Dropdown Menu in Navigation Bar */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                text-align: center;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+            
+            .dropdown-content a {
+                color: black;
+                padding: 10px 15px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #d8edf2;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .topnav a,
+            .dropdown .dropbtn {
+                display: inline-block;
+            }
+
+            /* Hero image*/
+            .hero-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(gif/gif1.gif);
+                background-repeat: no-repeat; 
+                background-size: cover; 
+                background-position: center; 
+                display: flex;
+                height: 50%;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-align: center;
+                opacity: 0.9;
+            }
+            .hero-text {
+                font-size: 70px;
+                margin: 0;
+                color: #78c7E8;
+                font-weight: bolder;
+                font-family: 'Mirza';
+            }
+        
+            /* Heading styles */
+            .heading {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                font-size: 2.5rem;
+                font-weight: bolder;
+                color: black; 
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .word {
+                opacity: 0;
+                transform: translateY(20px); 
+                animation: fadeInMove 1s ease-in-out forwards;
+            }
+
+            /* Animations for each word */
+            .word:nth-child(1) {
+                animation-delay: 0.5s;
+            }
+
+            .word:nth-child(2) {
+                animation-delay: 1s;
+            }
+
+            .word:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+
+            .word:nth-child(4) {
+                animation-delay: 2s;
+            }
+
+            .word:nth-child(5) {
+                animation-delay: 2.5s;
+            }
+
+            .word:nth-child(6) {
+                animation-delay: 3s;
+            }
+
+            @keyframes fadeInMove {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px); /* Move upward */
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0); /* Set to its original position */
+                }
+            }
+
+        
+            /* Alumni cards */
+            .container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-top: 20px;
+                padding: 20px;
+            }
+            
+            .card {
+                background-color: whitesmoke;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 250px;
+                padding: 20px;
+                text-align: center;
+                color: black; 
+                animation: slideIn 1s ease-in-out;
+            }
+            
+            .card img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+                animation: zoomIn 1s ease-in-out;
+            }
+            
+            .card h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+                margin: 10px 0 5px;
+                color: black; 
+            }
+            
+            .card p {
+                font-size: 14px;
+                margin: 0;
+                color: black; 
+            }
+
+            /* Animations */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes moveDown {
+                from {
+                    transform: translateY(-20px);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateX(-50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes zoomIn {
+                from {
+                    transform: scale(0.8);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        
+            /* Sign up */
+            body {font-family: Arial, Helvetica, sans-serif;}
+            * {box-sizing: border-box;}
+            
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+            }
+        
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+    
+            button {
+                background-color: #04AA6D;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+            }
+        
+            button:hover {
+                opacity: 1;
+            }
+        
+            .cancelbtn {
+                padding: 14px 20px;
+                background-color: #f44336;
+            }
+        
+            .cancelbtn, .signupbtn {
+                float: left;
+                width: 50%;
+            }
+        
+            .container1 {
+                padding: 16px;
+            }
+        
+            .modal {
+                display: none; 
+                position: fixed;
+                z-index: 1; 
+                left: 0;
+                top: 0;
+                width: 100%; 
+                height: 100%; 
+                overflow: auto; 
+                background-color: #474e5d;
+                padding-top: 50px;
+            }
+        
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5% auto 15% auto; 
+                border: 1px solid #888;
+                width: 80%; 
+            }
+        
+
+            hr {
+                border: 1px solid #f1f1f1;
+                margin-bottom: 25px;
+            }
+        
+            .close {
+                position: absolute;
+                right: 35px;
+                top: 15px;
+                font-size: 40px;
+                font-weight: bold;
+                color: #f1f1f1;
+            }
+        
+            .close:hover,
+            .close:focus {
+                color: #f44336;
+                cursor: pointer;
+            }
+        
+            .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        
+            @media screen and (max-width: 300px) {
+                .cancelbtn, .signupbtn {
+                    width: 100%;
+                }
+            }
+
+            /*Benfits becomes Alumni*/
+            ul {
+                list-style-type: none; 
+                padding: 0;           
+                background-color: #fff; 
+                border-radius: 8px;   
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+                margin-top: 20px; 
+            }
+
+            li {
+                margin: 15px 0;       
+                padding: 10px;    
+                padding-left: 40px; 
+                position: relative; 
+                background-color: #f9f9f9; 
+                transition: background-color 0.3s; 
+            }
+            
+            li::before {
+                content: "@"; 
+                position: absolute; /* Position absolutely */
+                left: 10px;  /* Spacing from the left */
+                top: 50%; /* Vertically center */
+                transform: translateY(-50%); /* Adjust vertical alignment */
+                font-size: 20px; /* Marker size */
+                color: black; /* Color of the custom marker */
+            }
+            
+            
+            ul li {
+                background-color: white; 
+                transition: transform 0.3s, background-color 0.3s; 
+            }
+
+            ul li:hover {
+                background-color: #f9E05E; 
+                transform: scale(1.05); 
+            }
+
+            /*Footer copyright*/
+            footer {
+                text-align: center;
+                padding: 15px;
+                background-color: #73b8c4;
+                margin-top: auto;
+            }
+            
+            .footer p {
+                margin: 0;
+                padding: 0;
+                height: 100%; 
+                display: flex;
+                flex-direction: column;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <!-- Right-Aligned Navigation Bar -->
+        <div class="topnav">
+            <a class="active" href="welcomepage.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <div class="dropdown">
+                <a href="services.html" class="dropbtn">Services</a>
+                <div class="dropdown-content">
+                    <a href="#daycare">Daycare</a>
+                    <a href="#event">Event/Program</a>
+                </div>
+            </div>
+            <a href="Contact Us.html">Contact Us</a>
+            <a href="Facilities.html">Facility</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="alumni.html">Alumni</a>
+            <a href="event.html">Events</a>
+            <a href="review.html">Review</a>
+        </div>
+
+        <!-- Hero Image-->
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1 style="font-size:50px">Alumni Tiny Tots</h1>
+            </div>
+        </div>
+
+
+        <!-- Heading -->
+        <h1 class="heading">
+            <span class="word">Who</span>
+            <span class="word">Should</span>
+            <span class="word">Join</span>
+            <span class="word">Tiny</span>
+            <span class="word">Tots</span>
+            <span class="word">Alumni?</span>
+        </h1>
+
+        <!-- Cards -->
+        <div class="container">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="image/alumni.jpeg" alt="TT Pre School Graduates">
+                <h3>Tiny Tots Pre School Graduates</h3>
+                <p>Alumni who graduated from Tiny Tots at the age of 6</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="image/alumni1.jpeg" alt="TT Elementary Graduates">
+                <h3>Tiny Tots Elementary Graduates</h3>
+                <p>Alumni who completed their elementary education at Tiny Tots</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="image/alumni2.jpg" alt="TT High School Graduates">
+                <h3>Tiny Tots High School Graduates</h3>
+                <p>Alumni who completed their high school education at Tiny Tots</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="image/alumni3.jpg" alt="TT High School Graduates">
+                <h3>Tiny Tots Graduates</h3>
+                <p>Alumni who completed their high school education at Tiny Tots</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+                <img src="image/alumni4.jpg" alt="TT High School Graduates">
+                <h3>Tiny Tots High School Graduates</h3>
+                <p>Alumni who completed their high school education at Tiny Tots</p>
+            </div>
+        </div>
+
+        <h2 style="text-align: center;">Join Tiny Tots Now!</h2>
+        
+        <!-- The Benefits when part of Tiny Tots -->
+         <br>
+         <br>
+         <h2 class="heading">Benefits Join Tiny Tots Academy</h2>
+        <ul>
+            <li><strong>Comprehensive Early Learning:</strong>Holistic education nurturing all-round development.</li>
+            <li><strong>Expert Educators: </strong> Caring, trained teachers fostering a love for learning.</li>
+            <li><strong>Safe Environment:</strong> Secure, stimulating spaces for curious young minds.</li>
+            <li><strong>Community Engagement:</strong> Strong parental involvement and community connections.</li>
+            <li><strong>Individualized Attention:</strong> Tailored learning experiences for each child's unique needs.</li>
+        </ul>
+        
+    </body>
+
+    <!--Footer-->
+    <footer>
+        <p style="text-align: center; color: white;">&copy; 2025 Tiny Tots Academy. All rights reserved.</p>
+    </footer>
+
+</html>
