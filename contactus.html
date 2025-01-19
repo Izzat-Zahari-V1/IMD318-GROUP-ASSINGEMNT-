@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Mirza' rel='stylesheet'>
   <style>
     * {
       box-sizing: border-box;
@@ -11,15 +12,15 @@
       padding: 0;
     }
 
-    body {
-      font-family: 'Mirza', Times, serif;
-      background-color: white; /* Soft sky blue */
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      opacity: 0; /* Initial opacity for fade effect */
-      animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in animation */
-    }
+  body {
+    font-family: 'Mirza', Times, serif;
+    background-color: white; /* Soft sky blue */
+    max-width: 1200px; /* Constrain main content width */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    opacity: 0; /* Initial opacity for fade effect */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in animation */
+      }
 
     /* Fade-in animation */
     @keyframes fadeIn {
@@ -31,13 +32,18 @@
       }
     }
 
-   /* Right-Aligned Navigation Bar */
-   .topnav {
-      display: flex;
-      justify-content: flex-end;
-      background-color: #73b8c4;
-      padding: 0;
-    }
+/* Navigation Bar */
+.topnav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #73b8c4;
+  padding: 0;
+  margin: 0;
+  width: 100vw; /* Make the navbar span the entire viewport width */
+  position: relative;
+  left: calc(-50vw + 50%); /* Center align while extending full width */
+  box-sizing: border-box;
+}
 
     .topnav a {
       color: #f2f2f2;
@@ -81,7 +87,7 @@
     }
 
     .dropdown-content a:hover {
-      background-color: #fffafa;
+      background-color: #d8edf2;
     }
 
     .dropdown:hover .dropdown-content {
@@ -230,8 +236,8 @@
           <a href="event.html">Event/Program</a>
         </div>
       </div>
-      <a href="Contact Us.html">Contact Us</a>
-      <a href="Facilities.html">Facility</a>
+      <a href="contactus.html">Contact Us</a>
+      <a href="facilities.html">Facility</a>
       <a href="gallery.html">Gallery</a>
       <a href="alumni.html">Alumni</a>
     </div>
