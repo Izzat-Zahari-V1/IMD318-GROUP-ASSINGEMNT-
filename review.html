@@ -34,38 +34,184 @@
       padding: 20px;
       background-color: white;
     }
-
-    /* Navigation bar */
-    nav {
-      background-color: #78c7E8;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav ul {
-      list-style-type: none;
+    /* Right-Aligned Navigation Bar */
+    .topnav {
       display: flex;
-      justify-content: center;
-      gap: 30px;
+      justify-content: flex-end;
+      background-color: #73b8c4;
+      padding: 0;
+      width: 100%;  /* Added this line to make the nav bar span across the full width */
+      position: fixed;  /* Added this line to make the navigation bar fixed at the top */
+      top: 0;  /* Added this line to position the navigation bar at the top */
+      left: 0;  /* Added this line to ensure it touches the left edge */
+      z-index: 1000;  /* Added to ensure the nav bar stays on top of the content */
+      font-family: Arial, sans-serif; /* Changed font for navigation */
     }
 
-    nav ul li {
-      margin: 0;
-    }
-
-    nav ul li a {
+    .topnav a {
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
       text-decoration: none;
+      font-size: 17px;
+      font-family: Arial, sans-serif; /* Changed font for navigation */
+    }
+
+    .topnav a:hover {
+      background-color: #9be1e7;
+      color: #000000;
+    }
+
+    .topnav a.active {
+      background-color: #73b8c4;
+      color: white;
+    }
+
+    /* Dropdown Menu in Navigation Bar */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      text-align: center;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
       color: black;
-      font-size: 18px;
-      text-transform: uppercase;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
     }
 
-    nav ul li a:hover {
-      color: #F9E05E;
+    .dropdown-content a:hover {
+      background-color: #d8edf2;
     }
 
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .topnav a,
+    .dropdown .dropbtn {
+      display: inline-block;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('images/kindergarten-hero.jpg') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: rgb(24, 76, 93);
+      padding: 30px;
+    }
+
+    .hero img {
+      width: 300px;
+      height: 250px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin: 0;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-20px);
+      }
+
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #3f8793;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .hero button:hover {
+      background-color: #73b8c4;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .feature {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .feature h3 {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    .feature p {
+      font-size: 1em;
+      color: #555;
+    }
+
+    /* Login/Logout Page Styles */
+    .container {
+      width: 100%;
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
     /* Heading style */
     .heading {
       font-size: 50px;
@@ -96,17 +242,14 @@
 
     /* Review Form */
     .review-form {
-      background-color: #78c7E8;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      width: 48%;
-      max-height: 500px;
-      overflow-y: auto;
-      z-index: 10;
-      animation: flyIn 1s ease-out;
-      font-family: 'Helvetica', sans-serif;
+    background-color: #78c7E8;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;  /* Centered the review form */
     }
 
     /* Animation for floating effect */
@@ -122,29 +265,34 @@
     }
 
     .review-form h3 {
-      text-align: center;
+      font-size: 24px;
       margin-bottom: 20px;
-      color: black;
+      text-align: center;  /* Centered the form heading */
     }
 
-    .review-form input, .review-form textarea, .review-form button {
+    .review-form textarea {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
+      font-size: 16px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      resize: vertical;
     }
 
     .review-form button {
-      background-color: #78c7E8;
-      color: black;
+      width: 100%;
+      padding: 12px;
+      background-color: #3f8793;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
       cursor: pointer;
     }
 
     .review-form button:hover {
-      background-color: white;
+      background-color: #73b8c4;
     }
 
     /* Star rating system */
@@ -168,15 +316,10 @@
 
     /* Floating and extended feedback section */
     .feedbacks {
-      background-color: #78c7E8;
-      height: auto;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      z-index: 5;
-      animation: floatUp 1s ease-out;
-      width: 48%;
-      font-family: 'Helvetica', sans-serif;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #78c7E8;
+    border-radius: 8px;
     }
 
     /* Floating animation for feedback overview */
@@ -191,53 +334,46 @@
       }
     }
 
-    .feedbacks h3 {
-      text-align: center;
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: black;
-    }
-
-    .feedback {
-      background-color: white;
-      padding: 10px;
+      .feedback {
+      background-color: #fff;
+      padding: 15px;
       margin-bottom: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .feedback .user-rating {
-      display: flex;
-      align-items: center;
+      margin-bottom: 10px;
     }
 
     .feedback .user-rating .fa {
-      color: #F9E05E;
-      margin-right: 5px;
+      font-size: 20px;
+      color: #f9e05e;  /* Gold color for stars */
     }
 
     .feedback .review-text {
-      margin-top: 10px;
       font-size: 16px;
+      margin-bottom: 10px;
       color: black;
     }
 
-    .feedback .feedback-buttons {
-      margin-top: 10px;
+    .feedback-buttons {
+      display: flex;
+      gap: 10px;
     }
 
-    .feedback .feedback-buttons button {
-      margin-right: 10px;
-      padding: 5px 10px;
-      background-color: whitesmoke;
-      color: white;
+    .feedback-buttons button {
+      padding: 8px 12px;
+      font-size: 16px;
+      background-color: #78c7E8;
       border: none;
       border-radius: 5px;
+      color: white;
       cursor: pointer;
     }
 
-    .feedback .feedback-buttons button:hover {
-      background-color: white;
+    .feedback-buttons button:hover {
+      background-color: #73b8c4;
     }
 
     .reply-form {
@@ -266,39 +402,49 @@
       }
     }
 
-    /* Footer styles */
     footer {
-      background-color: #78c7E8;
-      width: 100%;
-      padding: 10px 0; /* Slightly smaller footer height */
-      text-align: center;
+      background-color: #73b8c4; /* Matching the navigation bar */
+      width: 100%;  /* Ensures footer spans the full width */
+      padding: 14px 0;  /* Vertical padding for footer */
+      text-align: center;  /* Centered the footer text */
       position: relative;
       bottom: 0;
-      margin-top: 10px;
+      left: 0;
+      right: 0;
+      font-family: Arial, sans-serif; /* Matching font with navigation */
+
     }
 
     footer p {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      margin: 0;
+      color: white; /* Text color to match the nav bar text */
+      margin: 0; /* Remove default margin for consistent alignment */
+      font-size: 17px; /* Same font size as nav bar */
+      font-family: Arial, sans-serif; /* Changed font for navigation */
     }
+    footer p {
+    text-align: center;  /* This centers the text within the footer */
+}
   </style>
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Service</a></li>
-      <li><a href="#">Facility</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Alumni</a></li>
-      <li><a href="#">Review</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-  </nav>
+  <!-- Right-Aligned Navigation Bar -->
+  <div class="topnav">
+    <a class="active" href="welcomepage.html">Home</a>
+    <a href="#about">About Us</a>
+    <div class="dropdown">
+      <a href="#service" class="dropbtn">Services</a>
+      <div class="dropdown-content">
+        <a href="#daycare">Daycare</a>
+        <a href="#event">Event/Program</a>
+      </div>
+    </div>
+    <a href="#contact">Contact Us</a>
+    <a href="#facility">Facility</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#alumni">Alumni</a>
+    <a href="#review">Review</a>
+  </div>
 
   <!-- Heading -->
   <div class="heading">Tiny Tots Rating & Review</div>
@@ -368,103 +514,113 @@
     }
 
     // Handle review form submission
-    document.getElementById('reviewForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const reviewText = document.getElementById('reviewText').value;
-      const imageUpload = document.getElementById('imageUpload').files[0];
+  document.getElementById('reviewForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const reviewText = document.getElementById('reviewText').value;
+    const imageUpload = document.getElementById('imageUpload').files[0];
 
-      if (selectedRating > 0 && reviewText.trim() !== '') {
-        addFeedback(selectedRating, reviewText, imageUpload);
-        selectedRating = 0;
-        document.getElementById('reviewText').value = '';
-        updateStars();
+    if (selectedRating > 0 && reviewText.trim() !== '') {
+      addFeedback(selectedRating, reviewText, imageUpload);
+      selectedRating = 0;
+      document.getElementById('reviewText').value = ''; // Clear review text after submission
+      updateStars(); // Reset stars after review submission
+    }
+  });
+
+  function addFeedback(rating, reviewText, imageUpload) {
+    const feedbackDiv = document.createElement('div');
+    feedbackDiv.classList.add('feedback');
+
+    // Rating Section
+    const ratingDiv = document.createElement('div');
+    ratingDiv.classList.add('user-rating');
+    for (let i = 0; i < rating; i++) {
+      const star = document.createElement('span');
+      star.classList.add('fa', 'fa-star', 'checked');
+      ratingDiv.appendChild(star);
+    }
+
+    for (let i = rating; i < 5; i++) {
+      const star = document.createElement('span');
+      star.classList.add('fa', 'fa-star');
+      ratingDiv.appendChild(star);
+    }
+
+    // Review Text Section
+    const reviewTextDiv = document.createElement('div');
+    reviewTextDiv.classList.add('review-text');
+    reviewTextDiv.textContent = reviewText;
+
+    // Image Upload Section (Optional)
+    if (imageUpload) {
+      const image = document.createElement('img');
+      image.src = URL.createObjectURL(imageUpload);
+      image.style.maxWidth = '100%';
+      feedbackDiv.appendChild(image);
+    }
+
+    // Feedback Buttons (Agree/Disagree/Reply)
+    const feedbackButtonsDiv = document.createElement('div');
+    feedbackButtonsDiv.classList.add('feedback-buttons');
+
+    // Agree Button
+    const agreeButton = document.createElement('button');
+    agreeButton.innerHTML = '👍';
+    agreeButton.addEventListener('click', () => {
+      alert('You agreed with this feedback!');
+    });
+
+    // Disagree Button
+    const disagreeButton = document.createElement('button');
+    disagreeButton.innerHTML = '👎';
+    disagreeButton.addEventListener('click', () => {
+      alert('You disagreed with this feedback!');
+    });
+
+    // Reply Button
+    const replyButton = document.createElement('button');
+    replyButton.classList.add('reply-btn');
+    replyButton.innerHTML = 'Reply';
+    replyButton.addEventListener('click', () => {
+      let replyForm = feedbackDiv.querySelector('.reply-form');
+      if (!replyForm) {
+        replyForm = document.createElement('div');
+        replyForm.classList.add('reply-form');
+        replyForm.innerHTML = `
+          <textarea placeholder="Write your reply..."></textarea>
+          <button>Send Reply</button>
+        `;
+        const sendReplyButton = replyForm.querySelector('button');
+        sendReplyButton.addEventListener('click', () => {
+          const replyText = replyForm.querySelector('textarea').value;
+          if (replyText.trim() !== '') {
+            addReply(feedbackDiv, replyText);
+            replyForm.querySelector('textarea').value = ''; // Clear textarea after reply is submitted
+          }
+        });
+        feedbackDiv.appendChild(replyForm);
+      } else {
+        replyForm.style.display = replyForm.style.display === 'block' ? 'none' : 'block';
       }
     });
 
-    function addFeedback(rating, reviewText, imageUpload) {
-      const feedbackDiv = document.createElement('div');
-      feedbackDiv.classList.add('feedback');
-
-      const ratingDiv = document.createElement('div');
-      ratingDiv.classList.add('user-rating');
-
-      for (let i = 0; i < rating; i++) {
-        const star = document.createElement('span');
-        star.classList.add('fa', 'fa-star', 'checked');
-        ratingDiv.appendChild(star);
-      }
-
-      for (let i = rating; i < 5; i++) {
-        const star = document.createElement('span');
-        star.classList.add('fa', 'fa-star');
-        ratingDiv.appendChild(star);
-      }
-
-      const reviewTextDiv = document.createElement('div');
-      reviewTextDiv.classList.add('review-text');
-      reviewTextDiv.textContent = reviewText;
-
-      if (imageUpload) {
-        const image = document.createElement('img');
-        image.src = URL.createObjectURL(imageUpload);
-        image.style.maxWidth = '100%';
-        feedbackDiv.appendChild(image);
-      }
-
-      const feedbackButtonsDiv = document.createElement('div');
-      feedbackButtonsDiv.classList.add('feedback-buttons');
-
-      const agreeButton = document.createElement('button');
-      agreeButton.innerHTML = '👍';
-      agreeButton.addEventListener('click', function () {
-        alert('You agreed with this review!');
-      });
-
-      const disagreeButton = document.createElement('button');
-      disagreeButton.innerHTML = '👎';
-      disagreeButton.addEventListener('click', function () {
-        alert('You disagreed with this review!');
-      });
-
-      const replyButton = document.createElement('button');
-      replyButton.classList.add('reply-btn');
-      replyButton.innerHTML = 'Reply';
-      replyButton.addEventListener('click', function () {
-        const replyForm = feedbackDiv.querySelector('.reply-form');
-        replyForm.style.display = (replyForm.style.display === 'none' || replyForm.style.display === '') ? 'block' : 'none';
-      });
-
-      const replyForm = document.createElement('div');
-      replyForm.classList.add('reply-form');
-      const replyTextarea = document.createElement('textarea');
-      replyTextarea.rows = 3;
-      replyTextarea.placeholder = 'Type your reply here...';
-      replyForm.appendChild(replyTextarea);
-
-      const submitReplyButton = document.createElement('button');
-      submitReplyButton.textContent = 'Submit Reply';
-      submitReplyButton.addEventListener('click', function() {
-        const replyText = replyTextarea.value.trim();
-        if (replyText !== '') {
-          const replyDiv = document.createElement('div');
-          replyDiv.classList.add('review-text');
-          replyDiv.textContent = "Reply: " + replyText;
-          feedbackDiv.appendChild(replyDiv);
-          replyTextarea.value = '';
-          replyForm.style.display = 'none';
-        }
-      });
-
-      replyForm.appendChild(submitReplyButton);
       feedbackButtonsDiv.appendChild(agreeButton);
       feedbackButtonsDiv.appendChild(disagreeButton);
       feedbackButtonsDiv.appendChild(replyButton);
+
       feedbackDiv.appendChild(ratingDiv);
       feedbackDiv.appendChild(reviewTextDiv);
       feedbackDiv.appendChild(feedbackButtonsDiv);
-      feedbackDiv.appendChild(replyForm);
 
+      // Append feedback to the feedbacks container
       document.getElementById('feedbacks').appendChild(feedbackDiv);
+    }
+
+    function addReply(feedbackDiv, replyText) {
+      const replyDiv = document.createElement('div');
+      replyDiv.classList.add('reply');
+      replyDiv.textContent = `Reply: ${replyText}`;
+      feedbackDiv.appendChild(replyDiv); // Append reply below the feedback
     }
   </script>
 
