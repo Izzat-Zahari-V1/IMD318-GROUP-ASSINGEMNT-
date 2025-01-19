@@ -9,20 +9,31 @@
     /* General styling */
     body {
       margin: 0;
-      font-family: 'Mirza';
-      background-color: skyblue;
+      font-family: 'Mirza', Times, serif;
+      background-color:white;
     }
 
     h1 {
-      text-align: center;
-    }
+  text-align: center;
+  font-family: 'Mirza'; /* Replace with your desired font */
+      }
 
     p {
       text-align: center;
     }
 
-  /* Right-Aligned Navigation Bar */
-    .topnav {
+/* Fade-in animation */
+@keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+   /* Right-Aligned Navigation Bar */
+   .topnav {
       display: flex;
       justify-content: flex-end;
       background-color: #73b8c4;
@@ -71,7 +82,7 @@
     }
 
     .dropdown-content a:hover {
-      background-color: #d8edf2;
+      background-color: white;
     }
 
     .dropdown:hover .dropdown-content {
@@ -82,7 +93,6 @@
     .dropdown .dropbtn {
       display: inline-block;
     }
-
     /* Image grid container */
     .container {
       display: grid;
