@@ -59,7 +59,6 @@
     }
 
     .topnav a.active {
-      background-color: #73b8c4;
       color: white;
     }
 
@@ -117,35 +116,43 @@
       margin: 40px 0 20px;
     }
 
-    /* Staff Section */
-    .staff-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: nowrap; /* Prevent wrapping of staff members */
-    }
-
     .staff-member {
-      background-color: #FFF9BF; /* Soft yellow */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      flex: 1 1 calc(20% - 20px); /* Ensure five staff members fit in a row */
-    }
+  background-color: #FFF9BF; /* Soft yellow */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 calc(20% - 20px); /* Ensure five staff members fit in a row */
+  max-width: 200px; /* Uniform width */
+  height: 350px; /* Uniform height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center horizontally */
+}
 
-    .staff-member p {
-    white-space: nowrap; /* Ensures the phone number stays in one line */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adds ellipsis if the number is too long for the container */
-    }
+.staff-member img {
+  width: 120px; /* Uniform width for all images */
+  height: 120px; /* Uniform height for all images */
+  border-radius: 50%; /* Circular framing */
+  margin-bottom: 10px;
+}
 
-    .staff-member img {
-      width: 100%;
-      height: auto;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
+.staff-member h4 {
+  font-size: 16px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.staff-member p {
+  font-size: 14px;
+  text-align: center;
+  margin: 5px 0;
+  word-wrap: break-word; /* Ensure long text wraps */
+  display: flex; /* Make the container a flexbox */
+  justify-content: center; /* Center the content */
+  align-items: center; /* Align items vertically */
+}
 
     .staff-member h4 {
       font-size: 18px;
@@ -224,64 +231,60 @@
 <body>
 
   <!-- Navigation bar -->
-  <body>
-    <!-- Right-Aligned Navigation Bar -->
-    <div class="topnav">
-      <a class="active" href="homepage.html">Home</a>
-      <a href="aboutus.html">About Us</a>
-      <div class="dropdown">
-        <a href="services.html" class="dropbtn">Services</a>
-        <div class="dropdown-content">
-          <a href="daycare.html">Daycare</a>
-          <a href="event.html">Event/Program</a>
-        </div>
-      </div>
-      <a href="contactus.html">Contact Us</a>
-      <a href="facilities.html">Facility</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="alumni.html">Alumni</a>
-    </div>
-  </body>
-  
+<div class="topnav">
+  <a class="active" href="homepage.html">Home</a>
+  <a href="aboutus.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="event.html">Event</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="alumni.html">Alumni</a>
+  <a href="review.html">Review</a>
+  <a href="contactus.html">Contact Us</a>
+  <a href="facilities.html">Facility</a>
+  <a href="index.html">Log Out</a>
+
+</div>
+
  <!-- Staff Section -->
 <div class="section-title">Meet Our Staff</div>
-<div class="staff-section">
+<div class="staff-section" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
   <div class="staff-member">
     <img src="Contact Us Images of Individual/Izzat.jpg" alt="Muhammad Izzat Bin Zahari">
     <h4>Muhammad Izzat Bin Zahari</h4>
     <p>Teaching Staff</p>
-    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 40px; vertical-align: middle; margin-right: 5px;"> </strong>
+    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 5px;"></strong>
     <a href="tel:+60133877629">+60 13 397 7629</a></p>
   </div>
   <div class="staff-member">
     <img src="Contact Us Images of Individual/Alis.jpg" alt="Alis">
     <h4>Nurin Alis Zaqirah Binti Rohidzat</h4>
     <p>Teaching Staff</p>
-    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 40px; vertical-align: middle; margin-right: 5px;"> </strong>
+    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 5px;"></strong>
     <a href="tel:+60 12-266 0325">+60 12-266 0325</a></p>
   </div>
   <div class="staff-member">
     <img src="Contact Us Images of Individual/Liyana.jpg" alt="Sharifah Norliyana Binti Syed Khaidzir">
     <h4>Sharifah Norliyana Binti Syed Khaidzir</h4>
     <p>Teaching staff</p>
-    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 40px; vertical-align: middle; margin-right: 5px;"> </strong>
+    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 5px;"></strong>
     <a href="tel:+60 14-932 9698">+60 14-932 9698</a></p>
   </div>
   <div class="staff-member">
     <img src="Contact Us Images of Individual/Nur Azreen Natasya Binti Idris.jpg" alt="Nur Azreen Natasya Binti Idris">
     <h4>Nur Azreen Natasya Binti Idris</h4>
     <p>Teaching Staff</p>
-    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 40px; vertical-align: middle; margin-right: 5px;"> </strong>
+    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 5px;"></strong>
     <a href="tel:+601158668669">+601158668669</a></p>
   </div>
   <div class="staff-member">
     <img src="Contact Us Images of Individual/SITI NURUL AINI BINTI JESMIN .jpg" alt="Siti Nurul Aini Binti Jesmin">
     <h4>Siti Nurul Aini Binti Jesmin</h4>
     <p>Teaching Staff</p>
-    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 40px; vertical-align: middle; margin-right: 5px;"> </strong>
+    <p><strong><img src="Button/Phone call.png" alt="Phone" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 5px;"></strong>
     <a href="tel:+60 13-220 0920">+60 13-220 0920</a></p>
   </div>
 </div>
+
 
   <!-- Maps Section -->
   <div class="section-title">Our Locations</div>
