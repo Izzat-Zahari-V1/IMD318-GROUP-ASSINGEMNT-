@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', 'Helvetica', 'sans-serif';
+            background-color: #fdfaf6;
+            color: #333;
+        }
+
+        /* Right-Aligned Navigation Bar */
+        .topnav {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #73b8c4;
+            padding: 0;
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #9be1e7;
+            color: #000000;
+        }
+
+        .topnav a.active {
+            background-color: #94c8d2;
+            color: white;
+        }
+
+        /* Dropdown Menu in Navigation Bar */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            text-align: center;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #d8edf2;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .topnav a,
+        .dropdown .dropbtn {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div>
+            <a href="index.html" target="_blank">Home</a>
+            <a href="aboutus.html" target="mainFrame">About Us</a>
+            <a href="services.html" class="dropbtn" target="mainFrame">Services</a>
+            <div class="dropdown-content">
+                <a href="daycare.html" target="mainFrame">Daycare</a>
+                <a href="event.html" target="mainFrame">Event/Program</a>
+            </div>
+            <a href="contactus.html" target="mainFrame">Contact Us</a>
+            <a href="facility.html" target="mainFrame">Facilities</a>
+            <a href="gallery.html" target="mainFrame">Gallery</a>
+            <a href="alumni.html" target="mainFrame">Alumni</a>
+            <a href="review.html" target="mainFrame">Review</a>
+            <!-- Update Logout link to point to index.html -->
+            <a href="index.html" target="_top">Log Out</a>
+        </div>
+    </div>
+</body>
+
+</html>
